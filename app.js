@@ -16,9 +16,14 @@ window.addEventListener('resize', resize);
 document.addEventListener('mousemove', draw);
 document.addEventListener('mousedown', setPosition);
 document.addEventListener('mouseenter', setPosition);
-document.addEventListener('touchmove', draw);
-document.addEventListener('touchdown', setPosition);
-document.addEventListener('touchenter', setPosition);
+el.addEventListener("touchstart", handleStart, false);
+  el.addEventListener("touchend", handleEnd, false);
+  el.addEventListener("touchcancel", handleCancel, false);
+  el.addEventListener("touchleave", handleLeave, false);
+  el.addEventListener("touchmove", handleMove, false);
+//document.addEventListener('touchmove', draw);
+//document.addEventListener('touchdown', setPosition);
+//document.addEventListener('touchenter', setPosition);
 
 // last known position
 var pos = { x: 0, y: 0 };
